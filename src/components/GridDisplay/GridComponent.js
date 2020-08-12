@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Cell from './Cell';
+
+import CellComponent from './CellComponent';
 import GridModel from '../../models/GridModel';
 
- const Grid = ({grid, onCellClicked}) => (
+ const GridComponent = ({ grid, onCellClicked }) => (
   <table>
     <tbody>
       {grid.myMap((row, indexRow) => 
         <tr key={indexRow}>
           {row.map((cell, indexCell) =>
-            <Cell 
+            <CellComponent 
               key={`${indexRow}-${indexCell}`} 
               cell={cell}
               onCellClicked={onCellClicked}
@@ -21,9 +22,9 @@ import GridModel from '../../models/GridModel';
   </table>
 );
 
-Grid.propTypes = {
+GridComponent.propTypes = {
   grid: PropTypes.instanceOf(GridModel),
   onCellClicked: PropTypes.func.isRequired,
 }
 
-export default Grid;
+export default GridComponent;

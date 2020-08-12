@@ -1,28 +1,43 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
- const GridInputs = props => {
+ const GridInputs = ({ x, y, onDimensionsChange }) => {
 
-    const genericSync = event => {
-        props.onDimensionsChange({
-            x: event.target.name === 'x' ? parseInt(event.target.value) : props.x, 
-            y: event.target.name === 'y' ? parseInt(event.target.value) : props.y,
-        });
-    }
+	const genericSync = event => {
+		onDimensionsChange({
+			x: event.target.name === 'x' ? parseInt(event.target.value) : x, 
+			y: event.target.name === 'y' ? parseInt(event.target.value) : y,
+		});
+	}
 
-    return (
-        <div>
-            <label for="y">Height: </label>
-            <input type="number" value={props.y} id="y" name="y" onChange={genericSync} required/>
-            <label for="x">Width: </label>
-            <input type="number" value={props.x} id="x" name="x" onChange={genericSync} required/>
-        </div>
-    );
+	return (
+		<div>
+			<label htmlFor="y">Height: </label>
+			<input
+				type="number"
+				value={y}
+				id="y"
+				name="y"
+				onChange={genericSync}
+				required
+			/>
+			<label htmlFor="x">Width: </label>
+			<input
+				type="number"
+				value={x}
+				id="x"
+				name="x"
+				onChange={genericSync}
+				required
+			/>
+		</div>
+	);
 }
 
 GridInputs.propTypes = {
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
+	x: PropTypes.number.isRequired,
+	y: PropTypes.number.isRequired,
+	onDimensionsChange: PropTypes.func.isRequired,
 }
 
 export default GridInputs;
