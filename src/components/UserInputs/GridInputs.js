@@ -15,6 +15,7 @@ const GridInputs = ({ x, y, onDimensionsChange }) => {
         <input
           type="number"
           value={y}
+          min={0}
           id="y"
           name="y"
           onChange={genericSync}
@@ -26,6 +27,7 @@ const GridInputs = ({ x, y, onDimensionsChange }) => {
         <input
           type="number"
           value={x}
+          min={0}
           id="x"
           name="x"
           onChange={genericSync}

@@ -16,7 +16,7 @@ const Player = ({ steps, onStepsUpdate, onEvolveClick }) => {
             value={steps}
             id="steps"
             name="steps"
-            min="1"
+            min={1}
             onChange={updateValue}
           />
         </label>
@@ -24,7 +24,8 @@ const Player = ({ steps, onStepsUpdate, onEvolveClick }) => {
       <button
         type="button"
         onClick={onEvolveClick}
-      >Evolve
+      >
+        Evolve
       </button>
     </div>
   );
