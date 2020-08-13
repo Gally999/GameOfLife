@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { Alive, Dead } from "./CellState";
+import { Alive, Dead } from './CellState';
 
 class CellModel {
-
   static get shape() {
     return PropTypes.shape({
       id: PropTypes.string.isRequired,
       status: PropTypes.oneOfType([
         PropTypes.instanceOf(Alive),
-        PropTypes.instanceOf(Dead)
+        PropTypes.instanceOf(Dead),
       ]).isRequired,
     });
   }

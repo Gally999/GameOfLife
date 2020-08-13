@@ -1,11 +1,11 @@
-import CellModel from "./CellModel";
-import { Alive, Dead } from "./CellState";
-import { counterOf } from "../containers/helpers";
+import CellModel from './CellModel';
+import { Alive, Dead } from './CellState';
+import { counterOf } from '../containers/helpers';
 
 class GridModel {
   static withDimension(width, height) {
     const matrix = [];
-    
+
     for (let y = 0; y < height; y++) {
       const row = [];
       for (let x = 0; x < width; x++) {
@@ -22,14 +22,14 @@ class GridModel {
 
   constructor(matrix) {
     this.matrix = matrix.map(
-      row => row.map(
-        cell => cell,
+      (row) => row.map(
+        (cell) => cell,
       ),
     );
   }
 
   updateDimensions(width, height) {
-    return GridModel.withDimension(width, height);
+    return this.withDimension(width, height);
   }
 
   switchCellStatus(cell) {
@@ -42,9 +42,9 @@ class GridModel {
     if (x === -1) {
       return this;
     }
-    let oldCell = this.matrix[y][x];
-    let newCell = oldCell.withState(cell.isAlive ? new Dead() : new Alive());
-    let newMatrix = this.matrix.map((row, i) => {
+    const oldCell = this.matrix[y][x];
+    const newCell = oldCell.withState(cell.isAlive ? new Dead() : new Alive());
+    const newMatrix = this.matrix.map((row, i) => {
       const newRow = [...row];
       if (i === y) {
         newRow[x] = newCell;
@@ -68,13 +68,11 @@ class GridModel {
   }
 
   computeEvolution() {
-    const evolvedMatrix = this.matrix.map((row, y) => 
-      row.map((cell, x) => {
-        const neighbors = this.getCellNeighbors(x, y);
-        const liveNeighbors = counterOf(neighbors);
-        return cell.evolvesFrom(liveNeighbors);
-      }),
-    );
+    const evolvedMatrix = this.matrix.map((row, y) => row.map((cell, x) => {
+      const neighbors = this.getCellNeighbors(x, y);
+      const liveNeighbors = counterOf(neighbors);
+      return cell.evolvesFrom(liveNeighbors);
+    }));
     return evolvedMatrix;
   }
 
@@ -84,9 +82,9 @@ class GridModel {
     for (let i = y - distance; i <= y + distance ; i++) {
       if (this.matrix[i] !== undefined) {
         for (let j = x - distance; j <= x + distance; j++) {
-          if (this.matrix[i][j]) {   //Si on est dans la grille
-            if (!(i === y && j === x)) {	//Si on est pas nous même
-              neighbors.push(this.matrix[i][j]);	//On ajoute
+          if (this.matrix[i][j]) { // Si on est dans la grille
+            if (!(i === y && j === x)) { // Si on est pas nous même
+              neighbors.push(this.matrix[i][j]); // On ajoute
             }
           }
         }

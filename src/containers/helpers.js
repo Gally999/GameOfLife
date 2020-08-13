@@ -5,4 +5,6 @@ export const counterOf = (neighbors) => {
     }
     return counter;
   }, 0);
-}
+};
+
+export default counterOf;
