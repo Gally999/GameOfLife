@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridInputs renders the grid inputs component correctly 1`] = `
+<GridInputs
+  onDimensionsChange={[Function]}
+  x={4}
+  y={7}
+/>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CellComponent renders the cell component correctly 1`] = `
+<CellComponent
+  cell={
+    CellModel {
+      "id": "",
+      "status": Dead {},
+    }
+  }
+  onCellClicked={[Function]}
+/>
+`;

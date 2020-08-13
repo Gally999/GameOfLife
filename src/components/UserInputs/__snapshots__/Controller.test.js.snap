@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controller renders the controller component correctly 1`] = `
+<Controller
+  onDimensionsChange={[Function]}
+  onEvolveClick={[Function]}
+  onStepsUpdate={[Function]}
+  steps={1}
+  x={4}
+  y={7}
+/>
+`;

@@ -20,6 +20,10 @@ class GridModel {
     return new GridModel(matrix);
   }
 
+  static empty() {
+    return new GridModel([]);
+  }
+
   constructor(matrix) {
     this.matrix = matrix.map(
       (row) => row.map(

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options renders the options component correctly 1`] = `
+<Options
+  onDimensionsChange={[Function]}
+  x={4}
+  y={7}
+/>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridComponent renders the grid component correctly 1`] = `
+<GridComponent
+  grid={
+    GridModel {
+      "matrix": Array [],
+    }
+  }
+  onCellClicked={[Function]}
+/>
+`;

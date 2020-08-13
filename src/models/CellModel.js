@@ -13,6 +13,10 @@ class CellModel {
     });
   }
 
+  static empty() {
+    return new CellModel('', new Dead());
+  }
+
   constructor(id, status) {
     this.id = id;
     this.status = status;
