@@ -65,7 +65,9 @@ class App extends Component {
   }
 
   render() {
-    const { x, y, steps, grid } = this.state;
+    const {
+      x, y, steps, grid,
+    } = this.state;
     return (
       <div className="App">
         <Header />

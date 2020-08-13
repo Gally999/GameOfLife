@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import GridInputs from './GridInputs';
 
@@ -18,6 +18,6 @@ Options.propTypes = {
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
   onDimensionsChange: PropTypes.func.isRequired,
-}
+};
 
 export default Options;
