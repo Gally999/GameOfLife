@@ -33,7 +33,7 @@ class GridModel {
   }
 
   updateDimensions(width, height) {
-    return this.withDimension(width, height);
+    return GridModel.withDimension(width, height);
   }
 
   switchCellStatus(cell) {
