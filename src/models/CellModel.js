@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { Alive, Dead } from './CellState';
 
-class CellModel {
+class Cell {
   static get shape() {
     return PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -14,7 +14,7 @@ class CellModel {
   }
 
   static empty() {
-    return new CellModel('', new Dead());
+    return new Cell('', new Dead());
   }
 
   constructor(id, status) {
@@ -23,7 +23,7 @@ class CellModel {
   }
 
   withState(state) {
-    return new CellModel(this.id, state);
+    return new Cell(this.id, state);
   }
 
   get isAlive() {
@@ -45,4 +45,4 @@ class CellModel {
   }
 }
 
-export default CellModel;
+export default Cell;

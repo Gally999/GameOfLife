@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './CellComponent.css';
-import CellModel from '../../models/CellModel';
+import Cell from '../../models/CellModel';
 
 const CellComponent = ({ cell, onCellClicked }) => (
   <td
@@ -13,7 +13,7 @@ const CellComponent = ({ cell, onCellClicked }) => (
 );
 
 CellComponent.propTypes = {
-  cell: CellModel.shape.isRequired,
+  cell: Cell.shape.isRequired,
   onCellClicked: PropTypes.func.isRequired,
 };
 

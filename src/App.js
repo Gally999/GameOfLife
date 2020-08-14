@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Controller from './components/UserInputs/Controller';
-import GridModel from './models/GridModel';
+import Grid from './models/GridModel';
 import GridComponent from './components/GridDisplay/GridComponent';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       x: 6,
       y: 6,
       steps: 1,
-      grid: GridModel.withDimension(6, 6),
+      grid: Grid.withDimension(6, 6),
     };
     this.onDimensionsChange = this.onDimensionsChange.bind(this);
     this.onCellClicked = this.onCellClicked.bind(this);
@@ -54,7 +54,7 @@ class App extends Component {
     const { grid } = this.state;
     const evolvedMatrix = grid.computeEvolution();
     this.setState({
-      grid: GridModel.createFrom(evolvedMatrix),
+      grid: Grid.createFrom(evolvedMatrix),
     });
   }
 

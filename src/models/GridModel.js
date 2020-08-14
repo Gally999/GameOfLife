@@ -1,27 +1,27 @@
-import CellModel from './CellModel';
+import Cell from './CellModel';
 import { Alive, Dead } from './CellState';
 import { counterOf } from '../containers/helpers';
 
-class GridModel {
+class Grid {
   static withDimension(width, height) {
     const matrix = [];
 
     for (let y = 0; y < height; y++) {
       const row = [];
       for (let x = 0; x < width; x++) {
-        row.push(new CellModel(`${y}-${x}`, new Dead()));
+        row.push(new Cell(`${x}-${y}`, new Dead()));
       }
       matrix.push(row);
     }
-    return new GridModel(matrix);
+    return new Grid(matrix);
   }
 
   static createFrom(matrix) {
-    return new GridModel(matrix);
+    return new Grid(matrix);
   }
 
   static empty() {
-    return new GridModel([]);
+    return new Grid([]);
   }
 
   constructor(matrix) {
@@ -33,7 +33,7 @@ class GridModel {
   }
 
   updateDimensions(width, height) {
-    return GridModel.withDimension(width, height);
+    return Grid.withDimension(width, height);
   }
 
   switchCellStatus(cell) {
@@ -55,7 +55,7 @@ class GridModel {
       }
       return newRow;
     });
-    return new GridModel(newMatrix);
+    return new Grid(newMatrix);
   }
 
   // map(callback) {
@@ -83,7 +83,7 @@ class GridModel {
   getCellNeighbors(x, y) {
     const neighbors = [];
     const distance = 1;
-    for (let i = y - distance; i <= y + distance ; i++) {
+    for (let i = y - distance; i <= y + distance; i++) {
       if (this.matrix[i] !== undefined) {
         for (let j = x - distance; j <= x + distance; j++) {
           if (this.matrix[i][j]) { // Si on est dans la grille
@@ -98,4 +98,4 @@ class GridModel {
   }
 }
 
-export default GridModel;
+export default Grid;
