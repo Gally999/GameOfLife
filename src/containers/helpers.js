@@ -1,5 +1,3 @@
-import { array, object } from "prop-types";
-
 export const counterOf = (neighbors) => {
   if (neighbors && Array.isArray(neighbors)) {
     return neighbors.reduce((counter, cell) => {
