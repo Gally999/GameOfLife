@@ -3,7 +3,7 @@
 exports[`GridComponent renders the grid component correctly 1`] = `
 <GridComponent
   grid={
-    GridModel {
+    Grid {
       "matrix": Array [],
     }
   }

@@ -3,7 +3,7 @@
 exports[`CellComponent renders the cell component correctly 1`] = `
 <CellComponent
   cell={
-    CellModel {
+    Cell {
       "id": "",
       "status": Dead {},
     }
